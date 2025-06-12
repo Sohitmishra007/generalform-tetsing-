@@ -28,3 +28,8 @@ def form():
             <input type="submit">
         </form>
     """)
+
+# Add this block for local testing and Cloud Run compatibility
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
